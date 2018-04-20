@@ -4,21 +4,17 @@ $( document ).ready(function() {
   var necks = ["nc", "nd", "nb", "na"];
 
   $(".head").each(function(){
-    $(this).addClass(heads[~~(Math.random()*heads.length)]);
+    var randomNumber = Math.floor(Math.random() * 6);
+    $(this).css('background-image', `url(images/head/${randomNumber}.png)`)
   });
   $(".eyes").each(function(){
-    $(this).addClass(parts[~~(Math.random()*parts.length)]);
-  });
-  $(".nose").each(function(){
-    $(this).addClass(parts[~~(Math.random()*parts.length)]);
+    var randomNumber = Math.floor(Math.random() * 6);
+    $(this).css('background-image', `url(images/eyes/${randomNumber}.png)`)
   });
   $(".mouth").each(function(){
-    $(this).addClass(parts[~~(Math.random()*parts.length)]);
+    var randomNumber = Math.floor(Math.random() * 6);
+    $(this).css('background-image', `url(images/mouth/${randomNumber}.png)`)
   });
-  $(".neck").each(function(){
-    $(this).addClass(necks[~~(Math.random()*necks.length)]);
-  });
-
 
 
     $("#container li").each(function(){
@@ -26,12 +22,9 @@ $( document ).ready(function() {
     });
 
     $(".person").hover(function() {
-      console.log("entrei", $(this).children(".mouth"))
       $(this).children(".mouth").addClass("phrase");
     }, function() {
-      console.log("sai", $(this).children(".mouth"))
       $(this).children(".mouth").removeClass("phrase");
     });
   }
 );
-
